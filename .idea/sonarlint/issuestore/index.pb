@@ -41,3 +41,5 @@ S
 #frontend/src/ChallengeComponent.jsx,2/6/2609498d3398bf3ac460ef40452bacdf8cca15aa
 |
 Lbackend/src/main/java/org/jolly/multiplication/backend/config/WebConfig.java,9/6/96319c1646a205d0072665e353244be7bdc5df14
+S
+#frontend/src/ChallengeComponent.tsx,d/4/d4a3bdf733c8703a0c6dd1181673597102dc5f74

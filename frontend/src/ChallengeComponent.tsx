@@ -3,8 +3,8 @@ import {challenge, sendGuess} from "./ApiClient";
 
 const ChallengeComponent = () => {
     const [state, setState] = useState({
-        a: '',
-        b: '',
+        a: 0,
+        b: 0,
         user: '',
         message: '',
         guess: 0
@@ -26,7 +26,7 @@ const ChallengeComponent = () => {
         })
     }, [])
 
-    const handleChange = (event) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target
         setState(prevState => ({
             ...prevState,
@@ -34,7 +34,7 @@ const ChallengeComponent = () => {
         }))
     }
 
-    const handleSubmitResult = (event) => {
+    const handleSubmitResult = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         sendGuess(
             state.user,
@@ -56,7 +56,7 @@ const ChallengeComponent = () => {
         })
     }
 
-    const updateMessage = (m) => {
+    const updateMessage = (m: string) => {
         setState(prevState => ({
             ...prevState,
             message: m
@@ -72,7 +72,7 @@ const ChallengeComponent = () => {
             <form onSubmit={handleSubmitResult}>
                 <label>
                     Your alias:
-                    <input type="text" maxLength="12" name="user" value={state.user} onChange={handleChange}/>
+                    <input type="text" maxLength={12} name="user" value={state.user} onChange={handleChange}/>
                 </label>
                 <br/>
                 <label>
