@@ -1,0 +1,24 @@
+### generate random challenge
+GET http://localhost:8080/challenges/random
+
+### attempt challenge
+POST http://localhost:8080/attempts
+Content-Type: application/json
+
+{
+  "factorA": 58,
+  "factorB": 92,
+  "userAlias": "john",
+  "guess": 5400
+}
+
+### attempt challenge invalid input
+POST http://localhost:8080/attempts
+Content-Type: application/json
+
+{
+  "factorA": 58,
+  "factorB": 92,
+  "userAlias": "john",
+  "guess": -400
+}
