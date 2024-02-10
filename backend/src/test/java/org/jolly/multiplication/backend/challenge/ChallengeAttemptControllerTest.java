@@ -40,7 +40,7 @@ class ChallengeAttemptControllerTest {
         // given
         final User user = new User(1L, "john");
         final ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(50, 70, "john", 3500);
-        final ChallengeAttempt expected = new ChallengeAttempt(5L, user.getId(), 50, 70, 3500, true);
+        final ChallengeAttempt expected = new ChallengeAttempt(5L, user, 50, 70, 3500, true);
         given(challengeService.verifyAttempt(attemptDTO))
                 .willReturn(expected);
         // when

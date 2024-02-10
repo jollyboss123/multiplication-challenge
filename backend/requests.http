@@ -22,3 +22,6 @@ Content-Type: application/json
   "userAlias": "john",
   "guess": -400
 }
+
+### get statistics
+GET http://localhost:8080/attempts/stats?alias=john

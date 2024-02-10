@@ -1,6 +1,7 @@
 const SERVER_URL = 'http://localhost:8080'
 const GET_CHALLENGE = '/challenges/random'
 const POST_RESULT = '/attempts'
+const GET_ATTEMPTS_BY_ALIAS = '/attempts/stats?alias='
 
 export const challenge = async () : Promise<Response> => {
     return await fetch(`${SERVER_URL}${GET_CHALLENGE}`)
@@ -24,5 +25,27 @@ export const sendGuess = async (
             guess: guess
         })
     })
+}
+
+export interface Challenge {
+    factorA: number
+    factorB: number
+}
+
+export interface Guess {
+    correct: boolean
+    resultAttempt?: number
+}
+
+export interface Attempt {
+    id: number
+    factorA: number
+    factorB: number
+    correct: boolean
+    resultAttempt: number
+}
+
+export const getAttempts = async (alias: string): Promise<Response> => {
+    return await fetch(`${SERVER_URL}${GET_ATTEMPTS_BY_ALIAS}${alias}`)
 }
 
