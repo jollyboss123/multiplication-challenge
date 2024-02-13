@@ -1,4 +1,4 @@
-import {Attempt} from "../services/ApiClient";
+import {Attempt} from "../services/ChallengesApiClient";
 
 interface LastAttemptsProps {
     lastAttempts: Attempt[];

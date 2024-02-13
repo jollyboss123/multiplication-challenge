@@ -5,11 +5,20 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/backend/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/gamification/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/challenge/pom.xml" />
+        <option value="$PROJECT_DIR$/services/gamification/pom.xml" />
+        <option value="$PROJECT_DIR$/services/challenge/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/backend/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">

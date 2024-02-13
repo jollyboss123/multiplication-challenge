@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {Attempt, challenge, getAttempts, sendGuess, Challenge, Guess} from "../services/ApiClient";
+import {Attempt, challenge, getAttempts, sendGuess, Challenge, Guess} from "../services/ChallengesApiClient";
 import LastAttemptsComponent from "./LastAttemptsComponent";
+import LeaderBoardComponent from "./LeaderBoardComponent";
 
 type ChallengeState = {
     a: number;
@@ -68,26 +69,33 @@ const ChallengeComponent: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className={"display-column"}>
             <div>
                 <h3>Your new challenge is</h3>
                 <h1>{a} x {b}</h1>
             </div>
             <form onSubmit={handleSubmitResult}>
-                <label>
-                    Your alias:
-                    <input type="text" maxLength={12} name="user" value={user} onChange={handleChange}/>
-                </label>
-                <br/>
-                <label>
-                    Your guess:
-                    <input type="number" min={0} name="guess" value={guess} onChange={handleChange}/>
-                </label>
-                <br/>
-                <input type="submit" value="Submit"/>
+                <div className={"form-container"}>
+                    <label>
+                        Your alias:
+                        <input type="text" maxLength={12} name="user" value={user} onChange={handleChange}/>
+                    </label>
+                </div>
+                {/*<br/>*/}
+                <div className={"form-container"}>
+                    <label>
+                        Your guess:
+                        <input type="number" min={0} name="guess" value={guess} onChange={handleChange}/>
+                    </label>
+                </div>
+                {/*<br/>*/}
+                <div className={"form-container"}>
+                    <input type="submit" value="Submit"/>
+                </div>
             </form>
             <h4>{message}</h4>
             {lastAttempts.length > 0 && <LastAttemptsComponent lastAttempts={lastAttempts}/>}
+            <LeaderBoardComponent />
         </div>
     );
 };
