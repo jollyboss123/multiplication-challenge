@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/backend/challenge/pom.xml" />
         <option value="$PROJECT_DIR$/services/gamification/pom.xml" />
         <option value="$PROJECT_DIR$/services/challenge/pom.xml" />
+        <option value="$PROJECT_DIR$/services/gateway/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

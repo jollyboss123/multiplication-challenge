@@ -25,3 +25,6 @@ Content-Type: application/json
 
 ### get statistics
 GET http://localhost:8080/attempts/stats?alias=john
+
+### health
+GET http://localhost:8080/actuator/health

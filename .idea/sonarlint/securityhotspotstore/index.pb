@@ -219,3 +219,14 @@ hservices/gamification/src/test/java/org/jolly/multiplication/gamification/game/
 _services/gamification/src/main/java/org/jolly/multiplication/gamification/game/GameService.java,a/0/a0649657332011a226f3c754e04721929aa753e1
 N
 services/gamification/Makefile,3/c/3c83fc4617cfcda7ed18e2b5dc9f5b11306886a7
+P
+ services/gamification/.gitignore,6/8/6810e86fa31715cb9c5eb8825a778aaada65c714
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+H
+services/gateway/pom.xml,c/4/c4c595a860a696976eb0f7f0647c66f1e52ba788
+P
+ services/challenge/requests.http,2/2/22e1ffde0b00eb5ff75a23db63e0c537f0f90c0e
+S
+#services/gamification/requests.http,b/d/bd4645ba2f035aa1555032074307162af4cb8f3d

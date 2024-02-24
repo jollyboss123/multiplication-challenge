@@ -1,4 +1,4 @@
-const SERVER_URL = 'http://localhost:8081'
+const SERVER_URL = 'http://localhost:8000'
 const GET_LEADERBOARD = '/leaders'
 
 export const getLeaderboard = async () : Promise<Response> => {
