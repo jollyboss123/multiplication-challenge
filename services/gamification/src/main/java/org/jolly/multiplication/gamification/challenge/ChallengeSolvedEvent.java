@@ -9,7 +9,7 @@ import lombok.Value;
  * @author jolly
  */
 @Value
-public class ChallengeSolvedDTO {
+public class ChallengeSolvedEvent {
     long attemptId;
     boolean correct;
     @Min(1) @Max(99)

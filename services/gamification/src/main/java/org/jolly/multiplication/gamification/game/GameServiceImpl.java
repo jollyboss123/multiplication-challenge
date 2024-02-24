@@ -2,7 +2,7 @@ package org.jolly.multiplication.gamification.game;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jolly.multiplication.gamification.challenge.ChallengeSolvedDTO;
+import org.jolly.multiplication.gamification.challenge.ChallengeSolvedEvent;
 import org.jolly.multiplication.gamification.game.badgeprocessors.BadgeProcessor;
 import org.jolly.multiplication.gamification.game.domain.BadgeCard;
 import org.jolly.multiplication.gamification.game.domain.BadgeType;
@@ -24,7 +24,7 @@ public class GameServiceImpl implements GameService {
     private final List<BadgeProcessor> badgeProcessors;
 
     @Override
-    public GameResult newAttemptForUser(final ChallengeSolvedDTO challenge) {
+    public GameResult newAttemptForUser(final ChallengeSolvedEvent challenge) {
         if (challenge.isCorrect()) {
             final ScoreCard scoreCard = new ScoreCard(challenge.getUserId(), challenge.getAttemptId());
             scoreRepository.save(scoreCard);
@@ -39,7 +39,7 @@ public class GameServiceImpl implements GameService {
         }
     }
 
-    private List<BadgeCard> processForBadges(final ChallengeSolvedDTO challenge) {
+    private List<BadgeCard> processForBadges(final ChallengeSolvedEvent challenge) {
         final Integer totalScore = scoreRepository.findTotalByUser(challenge.getUserId())
                 .orElse(null);
         if (totalScore == null) {

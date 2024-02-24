@@ -1,6 +1,6 @@
 package org.jolly.multiplication.gamification.game.badgeprocessors;
 
-import org.jolly.multiplication.gamification.challenge.ChallengeSolvedDTO;
+import org.jolly.multiplication.gamification.challenge.ChallengeSolvedEvent;
 import org.jolly.multiplication.gamification.game.domain.BadgeType;
 import org.jolly.multiplication.gamification.game.domain.ScoreCard;
 
@@ -16,7 +16,7 @@ public interface BadgeProcessor {
      *
      * @return a {@link BadgeType} if the user is entitled to this badge, otherwise empty
      */
-    Optional<BadgeType> process(int currentScore, List<ScoreCard> scoreCardList, ChallengeSolvedDTO challenge);
+    Optional<BadgeType> process(int currentScore, List<ScoreCard> scoreCardList, ChallengeSolvedEvent challenge);
 
     /**
      * @return the {@link BadgeType} that this processor is handling. You can use it

@@ -6,7 +6,7 @@ import lombok.Value;
  * @author jolly
  */
 @Value
-public class ChallengeSolvedDTO {
+public class ChallengeSolvedEvent {
     long attemptId;
     boolean correct;
     int factorA;

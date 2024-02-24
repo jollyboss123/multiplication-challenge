@@ -1,6 +1,6 @@
 package org.jolly.multiplication.gamification.game.badgeprocessors;
 
-import org.jolly.multiplication.gamification.challenge.ChallengeSolvedDTO;
+import org.jolly.multiplication.gamification.challenge.ChallengeSolvedEvent;
 import org.jolly.multiplication.gamification.game.domain.BadgeType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -27,7 +27,7 @@ class LuckyNumberBadgeProcessorTest {
     @ParameterizedTest
     @MethodSource("factorLucky")
     void luckyNumberHit(int factorA, int factorB) {
-        final ChallengeSolvedDTO challenge = new ChallengeSolvedDTO(1L, true, factorA, factorB, 1L, "john_doe");
+        final ChallengeSolvedEvent challenge = new ChallengeSolvedEvent(1L, true, factorA, factorB, 1L, "john_doe");
         final Optional<BadgeType> res = luckyNumberBadgeProcessor.process(0, Collections.emptyList(), challenge);
         assertThat(res).contains(BadgeType.LUCKY_NUMBER);
     }
@@ -35,7 +35,7 @@ class LuckyNumberBadgeProcessorTest {
     @ParameterizedTest
     @MethodSource("factorMiss")
     void luckyNumberMiss(int factorA, int factorB) {
-        final ChallengeSolvedDTO challenge = new ChallengeSolvedDTO(1L, true, factorA, factorB, 1L, "john_doe");
+        final ChallengeSolvedEvent challenge = new ChallengeSolvedEvent(1L, true, factorA, factorB, 1L, "john_doe");
         final Optional<BadgeType> res = luckyNumberBadgeProcessor.process(0, Collections.emptyList(), challenge);
         assertThat(res).isEmpty();
     }

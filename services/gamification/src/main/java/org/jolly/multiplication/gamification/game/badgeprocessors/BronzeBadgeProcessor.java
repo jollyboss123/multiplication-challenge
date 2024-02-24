@@ -1,6 +1,6 @@
 package org.jolly.multiplication.gamification.game.badgeprocessors;
 
-import org.jolly.multiplication.gamification.challenge.ChallengeSolvedDTO;
+import org.jolly.multiplication.gamification.challenge.ChallengeSolvedEvent;
 import org.jolly.multiplication.gamification.game.domain.BadgeType;
 import org.jolly.multiplication.gamification.game.domain.ScoreCard;
 import org.springframework.stereotype.Component;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @Component
 public class BronzeBadgeProcessor implements BadgeProcessor {
     @Override
-    public Optional<BadgeType> process(final int currentScore, final List<ScoreCard> scoreCardList, final ChallengeSolvedDTO challenge) {
+    public Optional<BadgeType> process(final int currentScore, final List<ScoreCard> scoreCardList, final ChallengeSolvedEvent challenge) {
         if (currentScore > 50) {
             return Optional.of(BadgeType.BRONZE);
         }

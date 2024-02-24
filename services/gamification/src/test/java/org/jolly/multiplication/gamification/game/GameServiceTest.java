@@ -1,6 +1,6 @@
 package org.jolly.multiplication.gamification.game;
 
-import org.jolly.multiplication.gamification.challenge.ChallengeSolvedDTO;
+import org.jolly.multiplication.gamification.challenge.ChallengeSolvedEvent;
 import org.jolly.multiplication.gamification.game.badgeprocessors.BadgeProcessor;
 import org.jolly.multiplication.gamification.game.domain.BadgeCard;
 import org.jolly.multiplication.gamification.game.domain.BadgeType;
@@ -14,7 +14,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.jolly.multiplication.gamification.game.GameService.GameResult;
@@ -48,7 +47,7 @@ class GameServiceTest {
         // given
         final long userId = 1L;
         final long attemptId = 1L;
-        final ChallengeSolvedDTO challenge = new ChallengeSolvedDTO(attemptId, true, 58, 92, userId, "john_doe");
+        final ChallengeSolvedEvent challenge = new ChallengeSolvedEvent(attemptId, true, 58, 92, userId, "john_doe");
         final ScoreCard scoreCard = new ScoreCard(userId, attemptId);
         given(scoreRepository.findTotalByUser(userId))
                 .willReturn(Optional.of(10));
@@ -71,7 +70,7 @@ class GameServiceTest {
     @Test
     void wrongAttemptTest() {
         // given
-        final ChallengeSolvedDTO challenge = new ChallengeSolvedDTO(1L, false, 58, 92, 1L, "john_doe");
+        final ChallengeSolvedEvent challenge = new ChallengeSolvedEvent(1L, false, 58, 92, 1L, "john_doe");
         // when
         final GameResult res = gameService.newAttemptForUser(challenge);
         // then

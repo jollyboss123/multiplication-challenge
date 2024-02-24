@@ -1,7 +1,7 @@
 package org.jolly.multiplication.gamification.game;
 
 import lombok.Value;
-import org.jolly.multiplication.gamification.challenge.ChallengeSolvedDTO;
+import org.jolly.multiplication.gamification.challenge.ChallengeSolvedEvent;
 import org.jolly.multiplication.gamification.game.domain.BadgeType;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public interface GameService {
      * @param challenge the challenge data with user details, factors, etc.
      * @return a {@link GameResult} containing the new score and badge cards obtained
      */
-    GameResult newAttemptForUser(final ChallengeSolvedDTO challenge);
+    GameResult newAttemptForUser(final ChallengeSolvedEvent challenge);
 
     @Value
     class GameResult {

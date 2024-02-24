@@ -2,7 +2,6 @@ package org.jolly.multiplication.challenge.challenge;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jolly.multiplication.challenge.servicesclient.GamificationServiceClient;
 import org.jolly.multiplication.challenge.user.User;
 import org.jolly.multiplication.challenge.user.UserRepository;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ import java.util.List;
 public class ChallengeServiceImpl implements ChallengeService {
     private final UserRepository userRepository;
     private final ChallengeAttemptRepository attemptRepository;
-    private final GamificationServiceClient gameClient;
+    private final ChallengeEventPub challengeEventPub;
 
     @Override
     public ChallengeAttempt verifyAttempt(ChallengeAttemptDTO resultAttempt) {
@@ -38,8 +37,7 @@ public class ChallengeServiceImpl implements ChallengeService {
                 isCorrect
         );
         final ChallengeAttempt storedAttempt = attemptRepository.save(checkedAttempt);
-        final boolean status = gameClient.sendAttempt(storedAttempt);
-        log.info("gamification service response: {}", status);
+        challengeEventPub.challengeSolved(storedAttempt);
         return storedAttempt;
     }
 

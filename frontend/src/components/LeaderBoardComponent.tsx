@@ -43,24 +43,22 @@ const LeaderBoardComponent: React.FC = () => {
         return () => clearInterval(intervalId)
     },[refreshLeaderBoard])
 
-    const getLeaderBoardData = () : Promise<LeaderBoard[]> => {
-        return getLeaderboard().then(res => {
-            if (res.ok) {
-                return res.json();
-            } else {
-                return Promise.reject("gamification: error response");
-            }
-        });
+    const getLeaderBoardData = async (): Promise<LeaderBoard[]> => {
+        const res = await getLeaderboard();
+        if (res.ok) {
+            return res.json();
+        } else {
+            return Promise.reject("gamification: error response");
+        }
     }
 
-    const getUsersAliasData = (ids: number[]) : Promise<User[]> => {
-        return  getUsers(ids).then(res => {
-            if (res.ok) {
-                return res.json();
-            } else {
-                return Promise.reject("multiplication: error response");
-            }
-        })
+    const getUsersAliasData = async (ids: number[]): Promise<User[]> => {
+        const res = await getUsers(ids);
+        if (res.ok) {
+            return res.json();
+        } else {
+            return Promise.reject("multiplication: error response");
+        }
     }
 
     const updateLeaderBoard = (lb: LeaderBoard[]) => {
