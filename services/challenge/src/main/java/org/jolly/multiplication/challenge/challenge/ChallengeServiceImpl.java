@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.jolly.multiplication.challenge.user.User;
 import org.jolly.multiplication.challenge.user.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class ChallengeServiceImpl implements ChallengeService {
     private final ChallengeEventPub challengeEventPub;
 
     @Override
+    @Transactional
     public ChallengeAttempt verifyAttempt(ChallengeAttemptDTO resultAttempt) {
         // check if user exists
         final User user = userRepository.findByAlias(resultAttempt.getUserAlias())

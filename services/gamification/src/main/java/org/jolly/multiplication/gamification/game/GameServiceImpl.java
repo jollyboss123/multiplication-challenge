@@ -8,6 +8,7 @@ import org.jolly.multiplication.gamification.game.domain.BadgeCard;
 import org.jolly.multiplication.gamification.game.domain.BadgeType;
 import org.jolly.multiplication.gamification.game.domain.ScoreCard;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+@Transactional
 public class GameServiceImpl implements GameService {
     private final ScoreRepository scoreRepository;
     private final BadgeRepository badgeRepository;

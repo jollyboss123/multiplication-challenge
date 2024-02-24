@@ -35,8 +35,8 @@ public class AMQPConfig {
     ) {
         return QueueBuilder
                 .durable(queueName)
-                .ttl((int) Duration.ofHours(6).toMillis())
-                .maxLength(25_000)
+//                .ttl((int) Duration.ofHours(6).toMillis())
+//                .maxLength(25_000)
                 .build();
     }
 
