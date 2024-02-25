@@ -1,0 +1,11 @@
+name: multiplication
+
+services:
+  rabbitmq:
+    extends:
+      file: ./rabbitmq.yml
+      service: rabbitmq
+  consul:
+    extends:
+      file: ./consul.yml
+      service: consul

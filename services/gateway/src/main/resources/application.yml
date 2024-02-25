@@ -1,14 +1,24 @@
+spring.application.name: gateway
+
 server:
   port: 8000
+
+spring.cloud.consul:
+  enabled: true
+  ribbon:
+    enabled: false
+  discovery:
+    # get only services that pass health check
+    query-passing: true
 
 spring.cloud.gateway:
   routes:
     - id: multiplication
-      uri: http://localhost:8080/
+      uri: lb://multiplication
       predicates:
         - Path=/challenges/**,/attempts,/attempts/**,/users/**
     - id: gamification
-      uri: http://localhost:8081/
+      uri: lb://gamification
       predicates:
         - Path=/leaders
   globalcors:
@@ -23,6 +33,12 @@ spring.cloud.gateway:
           - "OPTIONS"
   default-filters:
     - DedupeResponseHeader=Access-Control-Allow-Origin,RETAIN_UNIQUE
+    # retry filter to execute subsequent request, so that the load balancer will
+    # route to any healthy instance
+    - name: Retry
+      args:
+        retries: 3
+        methods: GET,POST
 
 #logging:
 #  level:

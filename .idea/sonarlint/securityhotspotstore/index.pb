@@ -230,3 +230,11 @@ P
  services/challenge/requests.http,2/2/22e1ffde0b00eb5ff75a23db63e0c537f0f90c0e
 S
 #services/gamification/requests.http,b/d/bd4645ba2f035aa1555032074307162af4cb8f3d
+L
+services/docker/rabbitmq.yml,8/b/8ba1e9f4602bf9b1a68d8912f05a792b74e91bdf
+G
+services/docker/app.yml,c/1/c1c671530a280e8a0ff400e15d4b141c2141f4dc
+J
+services/docker/consul.yml,e/f/ef0059fc89d4b030ac90485d05c07f5a8722fa66
+N
+services/gateway/requests.http,8/6/86ab4af0e539d181c998f59c4d14e825fb386687
