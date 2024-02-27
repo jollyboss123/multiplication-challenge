@@ -100,3 +100,9 @@ kservices/gamification/src/test/java/org/jolly/multiplication/gamification/Gamif
 bservices/challenge/src/test/java/org/jolly/multiplication/challenge/ChallengeApplicationTests.java,9/f/9fdb2e577d44ac1e9b4699892c5ccb5ed4854562
 ù
 mservices/gamification/src/test/java/org/jolly/multiplication/gamification/game/LeaderBoardControllerTest.java,8/9/890aabd5ed68f13da4286678330f1848d3b1ea8b
+E
+services/logs/pom.xml,7/d/7dc552ff1d79ee4fb61a1541621e6e9ff1ddb7d4
+y
+Iservices/logs/src/main/java/org/jolly/multiplication/logs/AMQPConfig.java,d/b/dbcd19a0df8912bab8b638add1fb1e4ba9d9a9aa
+{
+Kservices/logs/src/main/java/org/jolly/multiplication/logs/LogsConsumer.java,c/1/c16891ad4cc38139f30e3b80d1e43cbcdebd583a
